@@ -9,24 +9,24 @@ public class Rational
 		this.numerator = 0;
 		this.denominator = 0;
 	}
-	static public int Gcd(int a,int b)
+	static public int gcd(int a,int b)
 	{
-		return b == 0 ? a : Gcd(b, a % b);
+		return b == 0 ? a : gcd(b, a % b);
 	}
 
-	public int GetNumerator()
+	public int getNumerator()
 	{
 		return this.numerator;
 	}
 
-	public int Getdenominator()
+	public int getdenominator()
 	{
 		return this.denominator;
 	}
 
 	public Rational(int numerator,int denominator)
 	{
-		int d = Gcd(numerator, denominator);
+		int d = gcd(numerator, denominator);
 		int x = numerator / d;
 		int y = denominator / d;
 		if(x > 0 && y < 0)
@@ -37,12 +37,13 @@ public class Rational
 		this.numerator = x;
 		this.denominator = y;
 	}
-	static public Rational Add(Rational a,Rational b)
+	
+	static public Rational add(Rational a,Rational b)
 	{
 		int x,y,d;
-		x = a.GetNumerator() * b.Getdenominator() + b.GetNumerator() * a.Getdenominator();
-		y = a.Getdenominator() * b.Getdenominator();
-		d = Gcd(x,y);
+		x = a.getNumerator() * b.getdenominator() + b.getNumerator() * a.getdenominator();
+		y = a.getdenominator() * b.getdenominator();
+		d = gcd(x,y);
 		x = x / d;
 		y = y / d;
 		if(x > 0 && y < 0)
@@ -53,12 +54,12 @@ public class Rational
 		return new Rational(x,y);
 	}
 
-	static public Rational Subtract(Rational a,Rational b)
+	static public Rational subtract(Rational a,Rational b)
 	{
 		int x,y,d;
-		x = a.GetNumerator() * b.Getdenominator() - b.GetNumerator() * a.Getdenominator();
-		y = a.Getdenominator() * b.Getdenominator();
-		d = Gcd(x,y);
+		x = a.getNumerator() * b.getdenominator() - b.getNumerator() * a.getdenominator();
+		y = a.getdenominator() * b.getdenominator();
+		d = gcd(x,y);
 		x = x / d;
 		y = y / d;
 		if(x > 0 && y < 0)
@@ -69,12 +70,12 @@ public class Rational
 		return new Rational(x,y);
 	} 
 
-	static public Rational Multiply(Rational a,Rational b)
+	static public Rational multiply(Rational a,Rational b)
 	{
 		int x,y,d;
-		x = a.GetNumerator() * b.GetNumerator();
-		y = a.Getdenominator() * b.Getdenominator();
-		d = Gcd(x,y);
+		x = a.getNumerator() * b.getNumerator();
+		y = a.getdenominator() * b.getdenominator();
+		d = gcd(x,y);
 		x = x / d;
 		y = y / d;
 		if(x > 0 && y < 0)
@@ -85,12 +86,12 @@ public class Rational
 		return new Rational(x,y);
 	} 
 
-	static public Rational Divide(Rational a,Rational b)
+	static public Rational divide(Rational a,Rational b)
 	{
 		int x,y,d;
-		x = a.GetNumerator() * b.Getdenominator();
-		y = a.Getdenominator() * b.GetNumerator();
-		d = Gcd(x,y);
+		x = a.getNumerator() * b.getdenominator();
+		y = a.getdenominator() * b.getNumerator();
+		d = gcd(x,y);
 		x = x / d;
 		y = y / d;
 		if(x > 0 && y < 0)
@@ -106,7 +107,7 @@ public class Rational
 		return this.numerator + "/" + this.denominator;
 	}
 
-	public String FormatString(int num)
+	public String formatString(int num)
 	{
 		NumberFormat nFormat=NumberFormat.getNumberInstance(); 
 		nFormat.setMaximumFractionDigits(num);
