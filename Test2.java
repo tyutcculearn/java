@@ -17,6 +17,7 @@ public class Test2
 		System.out.printf("The result of num1 multiply num2 is %s%n",a.multiply(b));
 		System.out.printf("The result of num1 divide num2 is %s%n",a.divide(b));
 		System.out.printf("The result of num1 mod num2 is %s%n",a.mod(b));
+		System.out.printf("The result of num1 isZero is %b%n",a.isZero());
 		System.out.printf("The result of num1 isEqualTo num2 is %b%n",a.isEqualTo(b));
 		System.out.printf("The result of num1 isNotEqualTo num2 is %b%n",a.isNotEqualTo(b));
 		System.out.printf("The result of num1 isGreaterThan num2 is %b%n",a.isGreaterThan(b));

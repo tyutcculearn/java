@@ -132,7 +132,15 @@ public class HugeInteger
 		}
 		return flag;
 	}
- 
+
+ 	public boolean isZero()
+ 	{
+ 		boolean flag = true;
+ 		for(int i = 0; i < this.n; i++)
+ 			if(this.num[i] != 0) flag = false;
+ 		return flag;
+ 	}
+
 	public HugeInteger multiply(HugeInteger y)
 	{
 		BigInteger a = new BigInteger(this.toString());
